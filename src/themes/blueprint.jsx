@@ -101,6 +101,45 @@ export function SolutionBlueprint() {
 }
 
 export function HowItWorksBlueprint() {
+  const steps = [
+    {
+      id: '4.1',
+      title: 'Structured Interview → PRD',
+      desc: 'Instead of diving into code, Claude interviewed me with targeted questions: What\'s your setup? How do you guide design? What aesthetic? Each answer constrained the solution space.',
+      code: 'Q: "What visual style?" → A: "Brutalist/unconventional"\nQ: "Key insight?" → A: "Constraints help"'
+    },
+    {
+      id: '4.2',
+      title: 'Reusable Command Templates',
+      desc: 'Pulled proven command templates from another project. The create-prd.md template structured our requirements doc. No reinventing the wheel — leverage what works.',
+      code: 'rsync -av ../obsidian-ai-agent/.agents/reference/upstream-commands/ .agents/'
+    },
+    {
+      id: '4.3',
+      title: 'Scaffold with Locked Constraints',
+      desc: 'Tech stack decided upfront: React + Vite + Tailwind. Aesthetic locked: brutalist. Structure locked: Problem → Solution → How. No scope creep allowed.',
+      code: null
+    },
+    {
+      id: '4.4',
+      title: 'Parallel Subagents for Variations',
+      desc: '3 AI agents ran simultaneously, each generating 5 design variations. 15 options in minutes. Void Mode, Blueprint Technical, Hazard Industrial, Punk Zine, Classified Document...',
+      code: 'Agent A: Electric Magenta, Void Mode, Daily Broadsheet, Corrupt Signal, Phosphor Terminal\nAgent B: Blueprint, Constructivist, Stencil Spray, Concrete Brutalism, Punk Zine\nAgent C: Wireframe Ghost, Massive Type, Broken Grid, Classified, Hazard Industrial'
+    },
+    {
+      id: '4.5',
+      title: 'Theme Switcher for Rapid Preview',
+      desc: 'Built a dropdown to toggle between 4 finalist themes live in the browser. No guessing from descriptions — see the actual rendered output before committing.',
+      code: null
+    },
+    {
+      id: '4.6',
+      title: 'Select and Strip',
+      desc: 'Picked Blueprint. Deleted the other themes, removed the switcher, committed. Ship the winner, discard the rest.',
+      code: 'rm src/themes/void.jsx src/themes/hazard.jsx src/components/ThemeSwitcher.jsx'
+    }
+  ]
+
   return (
     <section className="border-b border-dashed border-[#00d4ff] p-8 md:p-16 bg-[#0a1628] text-[#00d4ff]"
              style={{
@@ -109,22 +148,19 @@ export function HowItWorksBlueprint() {
                fontFamily: "'Share Tech Mono', 'Courier New', monospace"
              }}>
       <div className="max-w-4xl">
-        <h2 className="text-3xl md:text-4xl font-bold uppercase mb-8 tracking-wide">
-          [SECTION 04] Build Specifications
+        <h2 className="text-3xl md:text-4xl font-bold uppercase mb-4 tracking-wide">
+          [SECTION 04] Actual Build Process
         </h2>
+        <p className="text-sm opacity-70 mb-8">// Not theory. This is exactly what we did.</p>
 
         <div className="space-y-8">
-          {[
-            { id: '4.1', title: 'Constraint #1: Brutalist Aesthetic', desc: 'Instead of "make it pretty," we said: black and white, monospace type, raw borders, no gradients, no shadows.', code: '"Use a brutalist style: high contrast, visible grid, intentional roughness"' },
-            { id: '4.2', title: 'Constraint #2: Three Sections', desc: 'Problem → Solution → How. No navigation, no footer links, no scope creep. The structure was locked before the first line of code.', code: null },
-            { id: '4.3', title: 'Constraint #3: Specific Feedback', desc: 'When something didn\'t look right, we didn\'t say "fix it." We said exactly what to change.', code: '"Make the heading text-7xl instead of text-5xl"' }
-          ].map((item) => (
+          {steps.map((item) => (
             <div key={item.id} className="border-l border-dashed border-[#00d4ff] pl-6">
               <div className="text-xs opacity-50 mb-1">[{item.id}]</div>
               <h3 className="text-xl font-bold uppercase mb-2">{item.title}</h3>
               <p className="mb-2 opacity-80">{item.desc}</p>
               {item.code && (
-                <code className="text-sm bg-[#0a1628] border border-dashed border-[#00d4ff] text-white/70 p-2 block">
+                <code className="text-sm bg-[#0a1628] border border-dashed border-[#00d4ff] text-white/70 p-2 block whitespace-pre-wrap">
                   {item.code}
                 </code>
               )}
@@ -134,13 +170,27 @@ export function HowItWorksBlueprint() {
 
         <div className="mt-12 border border-[#00d4ff] p-6 relative">
           <div className="absolute -top-3 left-4 bg-[#0a1628] px-2 text-xs uppercase tracking-wider">
-            Output Note
+            Verification
           </div>
-          <p className="text-sm uppercase tracking-widest mb-2 opacity-70">// VERIFICATION:</p>
-          <p className="text-lg">
-            This page was built in 1 hour using Claude Code CLI.<br />
-            The method described is the method used.
-          </p>
+          <p className="text-sm uppercase tracking-widest mb-2 opacity-70">// OUTPUT METRICS:</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div>
+              <div className="text-2xl font-bold text-white">1</div>
+              <div className="text-xs opacity-70">HOUR</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-white">15</div>
+              <div className="text-xs opacity-70">VARIATIONS</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-white">3</div>
+              <div className="text-xs opacity-70">PARALLEL AGENTS</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-white">1</div>
+              <div className="text-xs opacity-70">SHIPPED</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
