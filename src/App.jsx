@@ -1,13 +1,13 @@
-import { HeroBlueprint, ProblemBlueprint, SolutionBlueprint, HowItWorksBlueprint, FooterBlueprint } from './themes/blueprint'
+import { HeroAmber, ProblemAmber, SolutionAmber, HowItWorksAmber, FooterAmber } from './themes/blueprint-amber'
 
 function App() {
   return (
     <main className="min-h-screen">
-      <HeroBlueprint />
-      <ProblemBlueprint />
-      <SolutionBlueprint />
-      <HowItWorksBlueprint />
-      <FooterBlueprint />
+      <HeroAmber />
+      <ProblemAmber />
+      <SolutionAmber />
+      <HowItWorksAmber />
+      <FooterAmber />
     </main>
   )
 }

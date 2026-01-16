@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
-/* B1: Blueprint Technical Theme */
+/* B1-ALT: Blueprint Amber Theme */
 :root {
-  --color-bg: #0a1628;
-  --color-text: #00d4ff;
+  --color-bg: #1a1408;
+  --color-text: #FFB000;
   --color-accent: #ffffff;
-  --color-border: #00d4ff;
-  --color-grid: #1a3a5c;
+  --color-border: #FFB000;
+  --color-grid: #3d2e0a;
   --font-mono: 'Share Tech Mono', 'Courier New', monospace;
   --border-weight: 1px;
 }
@@ -38,7 +38,7 @@ body {
   color: var(--color-bg);
 }
 
-/* Scrollbar styling for blueprint feel */
+/* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
