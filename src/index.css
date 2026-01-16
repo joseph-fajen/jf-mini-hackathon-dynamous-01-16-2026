@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+/* B1: Blueprint Technical Theme */
+:root {
+  --color-bg: #0a1628;
+  --color-text: #00d4ff;
+  --color-accent: #ffffff;
+  --color-border: #00d4ff;
+  --color-grid: #1a3a5c;
+  --font-mono: 'Share Tech Mono', 'Courier New', monospace;
+  --border-weight: 1px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  line-height: 1.6;
+  background-image:
+    linear-gradient(var(--color-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Selection styling */
+::selection {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* Scrollbar styling for blueprint feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-grid);
+  border: 1px solid var(--color-border);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border);
+}
